@@ -1,7 +1,14 @@
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { JogadoresModule } from './jogadores/jogadores.module';
 
 @Module({
-  imports: [],
+  imports: [
+    MongooseModule.forRoot('', {
+      useNewUrlParser: true,
+    }),
+    JogadoresModule,
+  ],
   controllers: [],
   providers: [],
 })
